@@ -56,8 +56,8 @@ body {
   position: absolute;
   z-index: 5;
   opacity: 0.95;
-  width: 180px;
-  height: 74px;
+  width: 186px;
+  height: 86px;
   transform-origin: center;
 }
 
@@ -73,19 +73,34 @@ body {
 
 .koi-fish {
   position: absolute;
-  inset: 0;
-  border-radius: 60% 45% 45% 60% / 58% 42% 58% 42%;
+  left: 14px;
+  top: 7px;
+  width: 162px;
+  height: 72px;
+  border-radius: 57% 45% 52% 58% / 67% 45% 55% 33%;
   transform: rotate(var(--koi-tilt)) scale(var(--koi-scale));
   transform-origin: center;
-  background:
-    radial-gradient(circle at 72% 36%, #f5efeb 0 8px, transparent 9px),
-    radial-gradient(circle at 72% 36%, #252649 0 4px, transparent 5px),
-    radial-gradient(30px 16px at 31% 32%, #ff5a07 0 98%, transparent 100%),
-    radial-gradient(28px 15px at 56% 66%, #ff5a07 0 98%, transparent 100%),
-    radial-gradient(24px 12px at 58% 24%, #252649 0 98%, transparent 100%),
-    radial-gradient(18px 10px at 39% 69%, #252649 0 98%, transparent 100%),
-    linear-gradient(125deg, #f4eeea 0 32%, #252649 33% 47%, #f4eeea 48% 62%, #ff5a07 63% 100%);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.24);
+  background: #ece9e1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.koi-fish::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--koi-pattern);
+}
+
+.koi-fish::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  border: 1px solid rgba(188, 181, 167, 0.65);
 }
 
 .koi.from-right .koi-fish {
@@ -94,45 +109,88 @@ body {
 
 .koi-tail {
   position: absolute;
-  left: -22px;
-  top: 20px;
-  width: 34px;
-  height: 34px;
-  background: linear-gradient(145deg, #f4eeea 0 52%, #ff5a07 53% 100%);
-  clip-path: polygon(100% 50%, 0 0, 14% 50%, 0 100%);
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.18));
+  left: -12px;
+  top: 25px;
+  width: 30px;
+  height: 38px;
+  background: #e8e2d7;
+  clip-path: polygon(100% 50%, 0 5%, 16% 50%, 0 95%);
+  border-radius: 20% 80% 80% 20%;
 }
 
 .koi-fin {
   position: absolute;
-  width: 22px;
-  height: 16px;
-  background: #f1ddd1;
-  border-radius: 70% 30% 70% 30%;
-  opacity: 0.95;
+  width: 24px;
+  height: 14px;
+  background: #dbd5c9;
+  border-radius: 58% 42% 68% 32%;
+  opacity: 0.88;
 }
 
 .koi-fin.top {
-  left: 70px;
-  top: 2px;
-  transform: rotate(-24deg);
+  left: 60px;
+  top: 0;
+  transform: rotate(-22deg);
 }
 
 .koi-fin.bottom {
-  left: 84px;
-  top: 54px;
-  transform: rotate(20deg);
+  left: 78px;
+  top: 60px;
+  transform: rotate(24deg);
 }
 
 .koi-eye {
   position: absolute;
-  right: 38px;
-  top: 23px;
-  width: 12px;
-  height: 12px;
+  right: 22px;
+  top: 30px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #f5efeb;
-  box-shadow: inset 0 0 0 3px #252649;
+  background: #3f3d3a;
+}
+
+.koi.variant-kohaku {
+  --koi-pattern:
+    radial-gradient(18px 11px at 20% 28%, #f24d34 0 98%, transparent 100%),
+    radial-gradient(26px 16px at 42% 48%, #f24d34 0 98%, transparent 100%),
+    radial-gradient(16px 10px at 28% 76%, #f24d34 0 98%, transparent 100%),
+    radial-gradient(17px 12px at 72% 18%, #f24d34 0 98%, transparent 100%),
+    radial-gradient(22px 12px at 80% 64%, #f24d34 0 98%, transparent 100%);
+}
+
+.koi.variant-kohaku-soft {
+  --koi-pattern:
+    radial-gradient(30px 14px at 34% 22%, #f35a3d 0 98%, transparent 100%),
+    radial-gradient(28px 16px at 52% 58%, #f35a3d 0 98%, transparent 100%),
+    radial-gradient(18px 11px at 76% 42%, #f35a3d 0 98%, transparent 100%),
+    radial-gradient(17px 10px at 18% 70%, #f35a3d 0 98%, transparent 100%);
+}
+
+.koi.variant-ogan .koi-fish {
+  background: #f0893c;
+}
+
+.koi.variant-ogan {
+  --koi-pattern:
+    radial-gradient(40px 22px at 34% 48%, #ef4c33 0 98%, transparent 100%),
+    radial-gradient(28px 15px at 64% 30%, #ef4c33 0 98%, transparent 100%);
+}
+
+.koi.variant-ogan .koi-tail {
+  background: #f0893c;
+}
+
+.koi.variant-ogan .koi-fin {
+  background: #ef9c4b;
+}
+
+.koi.variant-sanke {
+  --koi-pattern:
+    radial-gradient(20px 11px at 24% 24%, #3b3937 0 98%, transparent 100%),
+    radial-gradient(30px 18px at 46% 52%, #3b3937 0 98%, transparent 100%),
+    radial-gradient(20px 12px at 78% 18%, #3b3937 0 98%, transparent 100%),
+    radial-gradient(23px 14px at 70% 64%, #f24d34 0 98%, transparent 100%),
+    radial-gradient(17px 11px at 24% 72%, #f24d34 0 98%, transparent 100%);
 }
 
 @keyframes gradient-flow {

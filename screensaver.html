@@ -135,6 +135,7 @@
       function spawnKoi() {
         const koi = document.createElement("div");
         koi.className = "koi";
+        const koiVariants = ["variant-kohaku", "variant-ogan", "variant-sanke", "variant-kohaku-soft"];
 
         const fromLeft = Math.random() < 0.5;
         const top = Math.round(random(height * 0.1, height * 0.85));
@@ -146,6 +147,7 @@
         koi.style.setProperty("--koi-duration", duration + "s");
         koi.style.setProperty("--koi-scale", scale);
         koi.style.setProperty("--koi-tilt", rotate);
+        koi.classList.add(koiVariants[Math.floor(Math.random() * koiVariants.length)]);
 
         if (fromLeft) {
           koi.classList.add("from-left");
