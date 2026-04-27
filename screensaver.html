@@ -149,11 +149,18 @@
 
         if (fromLeft) {
           koi.classList.add("from-left");
-          koi.textContent = "><(((('>";
         } else {
           koi.classList.add("from-right");
-          koi.textContent = "<'((((><";
         }
+
+        koi.innerHTML = `
+          <div class="koi-fish">
+            <div class="koi-tail"></div>
+            <div class="koi-fin top"></div>
+            <div class="koi-fin bottom"></div>
+            <div class="koi-eye"></div>
+          </div>
+        `;
 
         koiLayer.appendChild(koi);
         window.setTimeout(() => {

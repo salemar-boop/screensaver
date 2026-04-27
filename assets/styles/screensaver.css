@@ -53,25 +53,84 @@ body {
 .koi {
   position: absolute;
   z-index: 5;
-  color: #ffe8d3;
-  text-shadow: 0 0 8px rgba(255, 140, 110, 0.45);
-  font-size: clamp(28px, 4vw, 54px);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
   opacity: 0.95;
+  width: 180px;
+  height: 74px;
+  transform-origin: center;
 }
 
 .koi.from-left {
   left: -26vw;
-  transform: translateY(0) rotate(var(--koi-tilt)) scale(var(--koi-scale));
   animation: koi-fly-left var(--koi-duration) linear forwards;
 }
 
 .koi.from-right {
   right: -26vw;
-  transform: translateY(0) rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
   animation: koi-fly-right var(--koi-duration) linear forwards;
+}
+
+.koi-fish {
+  position: absolute;
+  inset: 0;
+  border-radius: 60% 45% 45% 60% / 58% 42% 58% 42%;
+  transform: rotate(var(--koi-tilt)) scale(var(--koi-scale));
+  transform-origin: center;
+  background:
+    radial-gradient(circle at 72% 36%, #f5efeb 0 8px, transparent 9px),
+    radial-gradient(circle at 72% 36%, #252649 0 4px, transparent 5px),
+    radial-gradient(30px 16px at 31% 32%, #ff5a07 0 98%, transparent 100%),
+    radial-gradient(28px 15px at 56% 66%, #ff5a07 0 98%, transparent 100%),
+    radial-gradient(24px 12px at 58% 24%, #252649 0 98%, transparent 100%),
+    radial-gradient(18px 10px at 39% 69%, #252649 0 98%, transparent 100%),
+    linear-gradient(125deg, #f4eeea 0 32%, #252649 33% 47%, #f4eeea 48% 62%, #ff5a07 63% 100%);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.24);
+}
+
+.koi.from-right .koi-fish {
+  transform: rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
+}
+
+.koi-tail {
+  position: absolute;
+  left: -22px;
+  top: 20px;
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(145deg, #f4eeea 0 52%, #ff5a07 53% 100%);
+  clip-path: polygon(100% 50%, 0 0, 14% 50%, 0 100%);
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.18));
+}
+
+.koi-fin {
+  position: absolute;
+  width: 22px;
+  height: 16px;
+  background: #f1ddd1;
+  border-radius: 70% 30% 70% 30%;
+  opacity: 0.95;
+}
+
+.koi-fin.top {
+  left: 70px;
+  top: 2px;
+  transform: rotate(-24deg);
+}
+
+.koi-fin.bottom {
+  left: 84px;
+  top: 54px;
+  transform: rotate(20deg);
+}
+
+.koi-eye {
+  position: absolute;
+  right: 38px;
+  top: 23px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f5efeb;
+  box-shadow: inset 0 0 0 3px #252649;
 }
 
 @keyframes gradient-flow {
@@ -85,28 +144,28 @@ body {
 
 @keyframes koi-fly-left {
   from {
-    transform: translateX(0) rotate(var(--koi-tilt)) scale(var(--koi-scale));
+    transform: translateX(0);
     opacity: 0.85;
   }
   10% {
     opacity: 1;
   }
   to {
-    transform: translateX(150vw) rotate(var(--koi-tilt)) scale(var(--koi-scale));
+    transform: translateX(150vw);
     opacity: 0.95;
   }
 }
 
 @keyframes koi-fly-right {
   from {
-    transform: translateX(0) rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
+    transform: translateX(0);
     opacity: 0.85;
   }
   10% {
     opacity: 1;
   }
   to {
-    transform: translateX(-150vw) rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
+    transform: translateX(-150vw);
     opacity: 0.95;
   }
 }
