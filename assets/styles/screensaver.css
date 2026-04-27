@@ -56,8 +56,8 @@ body {
   position: absolute;
   z-index: 5;
   opacity: 0.95;
-  width: 186px;
-  height: 86px;
+  width: 180px;
+  height: 74px;
   transform-origin: center;
 }
 
@@ -73,34 +73,13 @@ body {
 
 .koi-fish {
   position: absolute;
-  left: 14px;
-  top: 7px;
-  width: 162px;
-  height: 72px;
-  border-radius: 57% 45% 52% 58% / 67% 45% 55% 33%;
+  inset: 0;
+  border-radius: 58% 42% 40% 60% / 58% 44% 56% 42%;
   transform: rotate(var(--koi-tilt)) scale(var(--koi-scale));
   transform-origin: center;
-  background: #ece9e1;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-}
-
-.koi-fish::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--koi-pattern);
-}
-
-.koi-fish::after {
-  content: "";
-  position: absolute;
-  left: -4px;
-  top: -3px;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  border: 1px solid rgba(188, 181, 167, 0.65);
+  background: #f0ece4;
+  border: 1px solid rgba(216, 206, 190, 0.9);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
 }
 
 .koi.from-right .koi-fish {
@@ -109,88 +88,174 @@ body {
 
 .koi-tail {
   position: absolute;
-  left: -12px;
-  top: 25px;
+  left: -18px;
+  top: 19px;
   width: 30px;
-  height: 38px;
-  background: #e8e2d7;
-  clip-path: polygon(100% 50%, 0 5%, 16% 50%, 0 95%);
-  border-radius: 20% 80% 80% 20%;
+  height: 36px;
+  background: #f0ece4;
+  border-radius: 8% 90% 90% 8%;
+  clip-path: polygon(100% 50%, 0 0, 38% 50%, 0 100%);
 }
 
 .koi-fin {
   position: absolute;
   width: 24px;
-  height: 14px;
-  background: #dbd5c9;
-  border-radius: 58% 42% 68% 32%;
-  opacity: 0.88;
+  height: 18px;
+  background: #ddd7cc;
+  border-radius: 65% 35% 65% 35%;
+  opacity: 0.9;
 }
 
 .koi-fin.top {
-  left: 60px;
-  top: 0;
-  transform: rotate(-22deg);
+  left: 70px;
+  top: 2px;
+  transform: rotate(-24deg);
 }
 
 .koi-fin.bottom {
-  left: 78px;
-  top: 60px;
-  transform: rotate(24deg);
+  left: 84px;
+  top: 54px;
+  transform: rotate(20deg);
 }
 
 .koi-eye {
   position: absolute;
-  right: 22px;
-  top: 30px;
-  width: 10px;
-  height: 10px;
+  right: 24px;
+  top: 28px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: #3f3d3a;
+  background: #3f3e3b;
 }
 
-.koi.variant-kohaku {
-  --koi-pattern:
-    radial-gradient(18px 11px at 20% 28%, #f24d34 0 98%, transparent 100%),
-    radial-gradient(26px 16px at 42% 48%, #f24d34 0 98%, transparent 100%),
-    radial-gradient(16px 10px at 28% 76%, #f24d34 0 98%, transparent 100%),
-    radial-gradient(17px 12px at 72% 18%, #f24d34 0 98%, transparent 100%),
-    radial-gradient(22px 12px at 80% 64%, #f24d34 0 98%, transparent 100%);
+.koi-patch {
+  position: absolute;
+  background: #f45133;
+  border-radius: 58% 42% 47% 53% / 52% 48% 58% 42%;
 }
 
-.koi.variant-kohaku-soft {
-  --koi-pattern:
-    radial-gradient(30px 14px at 34% 22%, #f35a3d 0 98%, transparent 100%),
-    radial-gradient(28px 16px at 52% 58%, #f35a3d 0 98%, transparent 100%),
-    radial-gradient(18px 11px at 76% 42%, #f35a3d 0 98%, transparent 100%),
-    radial-gradient(17px 10px at 18% 70%, #f35a3d 0 98%, transparent 100%);
+.patch-1 {
+  width: 52px;
+  height: 28px;
+  left: 44px;
+  top: 14px;
+  transform: rotate(-18deg);
 }
 
-.koi.variant-ogan .koi-fish {
-  background: #f0893c;
+.patch-2 {
+  width: 34px;
+  height: 22px;
+  left: 62px;
+  top: 42px;
+  transform: rotate(22deg);
 }
 
-.koi.variant-ogan {
-  --koi-pattern:
-    radial-gradient(40px 22px at 34% 48%, #ef4c33 0 98%, transparent 100%),
-    radial-gradient(28px 15px at 64% 30%, #ef4c33 0 98%, transparent 100%);
+.patch-3 {
+  width: 26px;
+  height: 18px;
+  left: 20px;
+  top: 34px;
+  transform: rotate(-10deg);
 }
 
-.koi.variant-ogan .koi-tail {
-  background: #f0893c;
+.patch-4 {
+  width: 20px;
+  height: 14px;
+  left: 110px;
+  top: 28px;
+  transform: rotate(12deg);
 }
 
-.koi.variant-ogan .koi-fin {
-  background: #ef9c4b;
+.koi.variant-1 .koi-fish {
+  background: #f0ece4;
 }
 
-.koi.variant-sanke {
-  --koi-pattern:
-    radial-gradient(20px 11px at 24% 24%, #3b3937 0 98%, transparent 100%),
-    radial-gradient(30px 18px at 46% 52%, #3b3937 0 98%, transparent 100%),
-    radial-gradient(20px 12px at 78% 18%, #3b3937 0 98%, transparent 100%),
-    radial-gradient(23px 14px at 70% 64%, #f24d34 0 98%, transparent 100%),
-    radial-gradient(17px 11px at 24% 72%, #f24d34 0 98%, transparent 100%);
+.koi.variant-2 .koi-fish {
+  background: #f2893f;
+  border-color: rgba(220, 131, 62, 0.9);
+}
+
+.koi.variant-2 .koi-patch {
+  background: #f45133;
+}
+
+.koi.variant-2 .patch-1 {
+  width: 64px;
+  height: 30px;
+  left: 36px;
+  top: 16px;
+}
+
+.koi.variant-2 .patch-2 {
+  width: 26px;
+  height: 16px;
+  left: 14px;
+  top: 26px;
+}
+
+.koi.variant-2 .patch-3,
+.koi.variant-2 .patch-4 {
+  opacity: 0;
+}
+
+.koi.variant-3 .koi-patch {
+  background: #f65a34;
+}
+
+.koi.variant-3 .patch-1 {
+  width: 44px;
+  left: 46px;
+}
+
+.koi.variant-3 .patch-2 {
+  width: 38px;
+  left: 78px;
+  top: 40px;
+}
+
+.koi.variant-3 .patch-3 {
+  width: 40px;
+  height: 22px;
+  left: 10px;
+  top: 16px;
+}
+
+.koi.variant-4 .koi-fish {
+  background: #f0ece4;
+}
+
+.koi.variant-4 .koi-patch {
+  background: #f45133;
+}
+
+.koi.variant-4 .patch-1 {
+  width: 34px;
+  height: 26px;
+  left: 56px;
+  top: 20px;
+}
+
+.koi.variant-4 .patch-2 {
+  width: 22px;
+  height: 16px;
+  left: 92px;
+  top: 46px;
+}
+
+.koi.variant-4 .patch-3 {
+  width: 18px;
+  height: 14px;
+  left: 18px;
+  top: 22px;
+  background: #3d3b39;
+}
+
+.koi.variant-4 .patch-4 {
+  width: 16px;
+  height: 14px;
+  left: 108px;
+  top: 16px;
+  background: #3d3b39;
 }
 
 @keyframes gradient-flow {
