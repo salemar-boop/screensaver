@@ -8,10 +8,12 @@
   </head>
   <body>
     <div class="gradient-bg" aria-hidden="true"></div>
+    <div id="koi-layer" aria-hidden="true"></div>
     <canvas id="petal-canvas" aria-label="Falling petals interactive screensaver"></canvas>
     <script>
       const canvas = document.getElementById("petal-canvas");
       const ctx = canvas.getContext("2d");
+      const koiLayer = document.getElementById("koi-layer");
 
       let width = 0;
       let height = 0;
@@ -130,6 +132,35 @@
         requestAnimationFrame(animate);
       }
 
+      function spawnKoi() {
+        const koi = document.createElement("div");
+        koi.className = "koi";
+
+        const fromLeft = Math.random() < 0.5;
+        const top = Math.round(random(height * 0.1, height * 0.85));
+        const duration = random(6, 10).toFixed(2);
+        const scale = random(0.8, 1.3).toFixed(2);
+        const rotate = random(-8, 8).toFixed(1) + "deg";
+
+        koi.style.top = top + "px";
+        koi.style.setProperty("--koi-duration", duration + "s");
+        koi.style.setProperty("--koi-scale", scale);
+        koi.style.setProperty("--koi-tilt", rotate);
+
+        if (fromLeft) {
+          koi.classList.add("from-left");
+          koi.textContent = "><(((('>";
+        } else {
+          koi.classList.add("from-right");
+          koi.textContent = "<'((((><";
+        }
+
+        koiLayer.appendChild(koi);
+        window.setTimeout(() => {
+          koi.remove();
+        }, (Number(duration) + 0.5) * 1000);
+      }
+
       function updatePointer(event) {
         const touch = event.touches ? event.touches[0] : null;
         pointer.x = touch ? touch.clientX : event.clientX;
@@ -153,6 +184,8 @@
       resize();
       petals = Array.from({ length: petalCount }, () => createPetal(true));
       animate();
+      spawnKoi();
+      window.setInterval(spawnKoi, 30000);
     </script>
   </body>
 </html>

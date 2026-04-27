@@ -43,11 +43,70 @@ body {
   display: block;
 }
 
+#koi-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.koi {
+  position: absolute;
+  z-index: 5;
+  color: #ffe8d3;
+  text-shadow: 0 0 8px rgba(255, 140, 110, 0.45);
+  font-size: clamp(28px, 4vw, 54px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 0.95;
+}
+
+.koi.from-left {
+  left: -26vw;
+  transform: translateY(0) rotate(var(--koi-tilt)) scale(var(--koi-scale));
+  animation: koi-fly-left var(--koi-duration) linear forwards;
+}
+
+.koi.from-right {
+  right: -26vw;
+  transform: translateY(0) rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
+  animation: koi-fly-right var(--koi-duration) linear forwards;
+}
+
 @keyframes gradient-flow {
   0% {
     background-position: 0% 0%;
   }
   100% {
     background-position: 100% 100%;
+  }
+}
+
+@keyframes koi-fly-left {
+  from {
+    transform: translateX(0) rotate(var(--koi-tilt)) scale(var(--koi-scale));
+    opacity: 0.85;
+  }
+  10% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(150vw) rotate(var(--koi-tilt)) scale(var(--koi-scale));
+    opacity: 0.95;
+  }
+}
+
+@keyframes koi-fly-right {
+  from {
+    transform: translateX(0) rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
+    opacity: 0.85;
+  }
+  10% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-150vw) rotate(calc(-1 * var(--koi-tilt))) scaleX(-1) scale(var(--koi-scale));
+    opacity: 0.95;
   }
 }
