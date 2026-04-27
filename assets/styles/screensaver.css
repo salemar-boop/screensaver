@@ -1,8 +1,9 @@
 :root {
-  --bg1: #0a0722;
-  --bg2: #3a0d5d;
-  --bg3: #7a1f7d;
-  --bg4: #ff6da2;
+  --bg1: #0f3553;
+  --bg2: #1e5f85;
+  --bg3: #8fc7d9;
+  --bg4: #f7f3d1;
+  --bg5: #fffbe8;
 }
 
 * {
@@ -27,12 +28,13 @@ body {
 .gradient-bg {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.18), transparent 35%),
-    radial-gradient(circle at 78% 26%, rgba(255, 210, 238, 0.2), transparent 38%),
-    linear-gradient(140deg, var(--bg1), var(--bg2) 36%, var(--bg3) 65%, var(--bg4));
+  background: radial-gradient(circle at 18% 20%, rgba(255, 251, 232, 0.55), transparent 34%),
+    radial-gradient(circle at 82% 24%, rgba(247, 243, 209, 0.45), transparent 40%),
+    radial-gradient(circle at 60% 78%, rgba(196, 229, 240, 0.24), transparent 42%),
+    linear-gradient(145deg, var(--bg1) 0%, var(--bg2) 34%, var(--bg3) 63%, var(--bg4) 86%, var(--bg5) 100%);
   background-size: 120% 120%;
   animation: gradient-flow 16s ease-in-out infinite alternate;
-  filter: saturate(1.08) brightness(1.03);
+  filter: saturate(1.05) brightness(1.04);
 }
 
 #petal-canvas {
