@@ -74,12 +74,11 @@ body {
 .koi-fish {
   position: absolute;
   inset: 0;
-  border-radius: 60% 40% 46% 54% / 66% 40% 60% 34%;
+  border-radius: 64% 36% 42% 58% / 70% 42% 58% 30%;
   transform: rotate(var(--koi-tilt)) scale(var(--koi-scale));
   transform-origin: center;
-  background: #f4f3ef;
-  border: 2px solid #111;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: #c8d2d9;
+  box-shadow: 0 2px 8px rgba(24, 44, 64, 0.2);
 }
 
 .koi.from-right .koi-fish {
@@ -88,14 +87,12 @@ body {
 
 .koi-tail {
   position: absolute;
-  left: -14%;
-  top: 26%;
-  width: 24%;
-  height: 50%;
-  background: #f4f3ef;
-  border: 2px solid #111;
-  border-left: 0;
-  border-radius: 8% 90% 90% 8%;
+  left: -12%;
+  top: 24%;
+  width: 26%;
+  height: 54%;
+  background: #b7c8d0;
+  border-radius: 12% 88% 88% 12%;
   clip-path: polygon(100% 50%, 0 0, 38% 50%, 0 100%);
 }
 
@@ -103,11 +100,9 @@ body {
   position: absolute;
   width: 16%;
   height: 28%;
-  background: #ece8df;
-  border: 2px solid #111;
-  border-left: 0;
-  border-radius: 65% 35% 65% 35%;
-  opacity: 0.9;
+  background: #a8bcc7;
+  border-radius: 70% 30% 68% 32%;
+  opacity: 0.95;
 }
 
 .koi-fin.top {
@@ -124,18 +119,18 @@ body {
 
 .koi-eye {
   position: absolute;
-  right: 12%;
-  top: 43%;
-  width: 7%;
-  height: 15%;
+  right: 13%;
+  top: 46%;
+  width: 8%;
+  height: 18%;
   border-radius: 50%;
-  background: #111;
+  background: #4f5a73;
 }
 
 .koi-patch {
   position: absolute;
-  background: #ff4b1f;
-  border-radius: 58% 42% 47% 53% / 52% 48% 58% 42%;
+  background: #ff6b57;
+  border-radius: 60% 40% 45% 55% / 54% 46% 60% 40%;
 }
 
 .patch-1 {
@@ -171,49 +166,50 @@ body {
 }
 
 .patch-5 {
-  width: 10%;
-  height: 14%;
-  left: 74%;
-  top: 14%;
-  transform: rotate(8deg);
-  background: #111;
+  width: 18%;
+  height: 24%;
+  left: 56%;
+  top: 36%;
+  transform: rotate(14deg);
+  background: #56617a;
 }
 
 .patch-6 {
-  width: 12%;
-  height: 16%;
-  left: 20%;
-  top: 24%;
+  width: 14%;
+  height: 20%;
+  left: 14%;
+  top: 60%;
   transform: rotate(-20deg);
-  background: #111;
+  background: #4c5872;
 }
 
 .patch-7 {
-  width: 8%;
-  height: 12%;
-  left: 34%;
-  top: 66%;
-  background: #111;
+  width: 12%;
+  height: 16%;
+  left: 72%;
+  top: 18%;
+  background: #dbe2e7;
 }
 
 .patch-8 {
-  width: 12%;
-  height: 16%;
-  left: 4%;
-  top: 60%;
-  transform: rotate(-10deg);
+  width: 14%;
+  height: 20%;
+  left: 2%;
+  top: 28%;
+  transform: rotate(-16deg);
+  background: #d5dde3;
 }
 
 .koi.variant-1 .koi-fish {
-  background: #f4f3ef;
+  background: #c7d2d9;
 }
 
 .koi.variant-2 .koi-fish {
-  background: #f4f3ef;
+  background: #ff715b;
 }
 
 .koi.variant-2 .koi-patch {
-  background: #ff4b1f;
+  background: #56627b;
 }
 
 .koi.variant-2 .patch-1 {
@@ -241,8 +237,12 @@ body {
   opacity: 1;
 }
 
+.koi.variant-2 .patch-8 {
+  opacity: 1;
+}
+
 .koi.variant-3 .koi-patch {
-  background: #ff5626;
+  background: #ff6f58;
 }
 
 .koi.variant-3 .patch-1 {
@@ -264,11 +264,11 @@ body {
 }
 
 .koi.variant-4 .koi-fish {
-  background: #f4f3ef;
+  background: #c9d4da;
 }
 
 .koi.variant-4 .koi-patch {
-  background: #ff4b1f;
+  background: #4d5872;
 }
 
 .koi.variant-4 .patch-1 {
@@ -290,7 +290,7 @@ body {
   height: 18%;
   left: 10%;
   top: 24%;
-  background: #3d3b39;
+  background: #ff6b57;
 }
 
 .koi.variant-4 .patch-4 {
@@ -298,7 +298,7 @@ body {
   height: 18%;
   left: 66%;
   top: 18%;
-  background: #111;
+  background: #d9e1e6;
 }
 
 .koi.variant-4 .patch-5,
@@ -314,6 +314,10 @@ body {
 
 .koi.variant-3 .patch-6,
 .koi.variant-3 .patch-7 {
+  opacity: 1;
+}
+
+.koi.variant-3 .patch-8 {
   opacity: 1;
 }
 
